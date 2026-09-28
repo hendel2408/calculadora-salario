@@ -31,7 +31,37 @@ def resultado():
 
     resultado = salario - inss - ir + (dependentes * 200)
 
-    return f"Salário líquido: R$ {resultado:.2f}"
+    return f"""
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resultado</title>
+        <style>
+            body {{
+                min-height: 100vh;
+                margin: 0;
+                display: grid;
+                place-items: center;
+                font-family: Arial, sans-serif;
+                color: #222222;
+                background-color: #f5f5f5;
+            }}
+
+            p {{
+                margin: 20px;
+                font-size: 28px;
+                font-weight: bold;
+                text-align: center;
+            }}
+        </style>
+    </head>
+    <body>
+        <p>Salário líquido: R$ {resultado:.2f}</p>
+    </body>
+    </html>
+    """
 
 
 if __name__ == "__main__":
