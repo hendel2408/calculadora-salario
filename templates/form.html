@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salario Liquido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f6f8;
+            color: #1f2933;
+        }
+
+        main {
+            max-width: 520px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(31, 41, 51, 0.12);
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 6px;
+            padding: 10px;
+            border: 1px solid #bcccdc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+            border: 0;
+            border-radius: 6px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .erro {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 6px;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Calculadora de Salario Liquido</h1>
+
+        {% if erro %}
+            <p class="erro">{{ erro }}</p>
+        {% endif %}
+
+        <form action="/resultado" method="post">
+            <label for="salario">Salario Bruto:</label>
+            <input type="text" id="salario" name="salario" placeholder="Ex: 3000,00" required>
+
+            <label for="dependentes">Numero de Dependentes:</label>
+            <input type="number" id="dependentes" name="dependentes" min="0" step="1" placeholder="Ex: 2" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+    </main>
+</body>
+</html>
