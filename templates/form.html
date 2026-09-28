@@ -2,23 +2,71 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Salário Líquido</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #222222;
+            background-color: #f5f5f5;
+        }
+
+        main {
+            width: calc(100% - 40px);
+            max-width: 420px;
+            margin: 60px auto;
+        }
+
+        h1 {
+            margin: 0 0 28px;
+            font-size: 28px;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #999999;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            margin-top: 14px;
+            border: 0;
+            color: #ffffff;
+            background-color: #245b4f;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #19443b;
+        }
+    </style>
 </head>
 <body>
-    <h1>Calculadora de Salário Líquido</h1>
+    <main>
+        <h1>Calculadora de Salário Líquido</h1>
 
-    <form action="/resultado" method="post">
-        <label>Salário Bruto:</label>
-        <input type="text" name="salario">
+        <form action="/resultado" method="post">
+            <label for="salario">Salário Bruto:</label>
+            <input type="text" id="salario" name="salario">
 
-        <br><br>
+            <label for="dependentes">Número de Dependentes:</label>
+            <input type="number" id="dependentes" name="dependentes">
 
-        <label>Número de Dependentes:</label>
-        <input type="number" name="dependentes">
-
-        <br><br>
-
-        <input type="submit" value="Calcular">
-    </form>
+            <input type="submit" value="Calcular">
+        </form>
+    </main>
 </body>
 </html>
